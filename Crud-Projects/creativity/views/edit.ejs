@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h2>Edit your post</h2>
+    <p>post id: <%=post.id%></p>
+    <p>Post Username</p>
+<form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+    
+    <textarea name="content"><%= post.content %></textarea>
+    <br><br>
+    <input type="text" name="image" value="<%= post.image %>" />
+    <br><br>
+    <input type="number" name="likes" value="<%= post.likes %>" required><br>
+    <input type="number" name="views" value="<%= post.views %>" required><br>
+    <button type="submit">Update Post</button>
+</form>
+
+    
+</body>
+</html>

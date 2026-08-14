@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Here is your post in detail </h2>
+    <p>Post Id :<%=post.id%></p>
+    <div class="post">
+        <h3>
+            <%-post.content%>
+        </h3>
+        <% if(post.image){ %>
+            <img src="<%= post.image %>" alt="Post Image" style="width: 300px; margin-top: 10px; border-radius: 10px;">
+        <% } else { %>
+            <p><i>No image attached to this post</i></p>
+        <% } %>
+        <p>❤️ Likes: <%= post.likes %></p>
+        <p>👀 Views: <%= post.views %></p>
+    </div>
+
+    <br>
+    
+    <a class="back-portfolio-btn" href="/posts">← Back to Portfolio</a>
+    
+</body>
+</html>

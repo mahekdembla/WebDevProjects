@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+</head>
+<body>
+    <form method="post" action="/posts" enctype="multipart/form-data">
+        <label>Upload Image File (optional)</label>
+        <input type="file" name="imageFile" />
+        <br><br>
+        <label>Or paste Image URL</label>
+
+        <input type="text" placeholder="Enter Image URL (optional)" name="image" />
+        <br><br>
+        <textarea placeholder="Write your conetent" name="content"></textarea>
+        <br>
+        <input type="number" name="likes" placeholder="Likes"  required><br>
+        <input type="number" name="views" placeholder="Views" required><br>
+        <br><br>
+        <button>Summit Post</button>
+    </form>
+    
+</body>
+</html>

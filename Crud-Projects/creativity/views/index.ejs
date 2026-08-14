@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <h1>@<%= username %></h1>
+        <p>Welcome to my world of colors and emotions &#x1F3A8;&#x2728;</p>
+    </header>
+    
+
+    <% for(post of posts){%>
+        <div class="post">
+            <h3 class="content"><%-post.content%></h3>
+            <!-- <% if(post.image){ %>
+                <img src="<%= post.image %>" alt="Post image" width="300px">
+            <% } %> -->
+
+            <a href="http://localhost:8080/posts/<%=post.id%>">See in detail</a>
+            <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <br>
+            <form method="post" action="/posts/<%=post.id%>?_method=Delete">
+                <button>Delete</button>
+            </form>
+            
+
+        </div>
+
+    <% } %>
+    <br>
+    
+    <a class="create-post-btn" href="http://localhost:8080/posts/new">Create New Post</a>
+    
+</body>
+</html>
